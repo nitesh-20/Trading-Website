@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchOutlined from "@mui/icons-material/SearchOutlined";
-// import Logo from './robinhood.svg';
+import Logo from '../assets/logo.ico';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,10 +8,11 @@ const Navbar = () => {
   return (
     <div className="header">
       <div className="header__brand">
-        <span className="header__title">JWG</span>
+        <span className="header__title">
+          <img src={Logo} alt="" />
+        </span>
       </div>
       
-      {/* Menu Toggle for Mobile */}
       {/* <div className="header__toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         ☰
       </div> */}

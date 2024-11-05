@@ -1,25 +1,35 @@
-*{
+// Variables
+$bg-primary: #2C5F2D;
+$text-primary: #C0C0C0;
+$white: #FFFFFF;
+$hover-color: #d4d4d8;
+$gold: #FFD700;
+$black: #000000;
+
+// Universal Reset
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-//* Header.scss */
 
+// Header
 .header {
-  background-color: black;
-  color: white;
+  background-color: $bg-primary;
+  color: $text-primary;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  flex-wrap: wrap;
 
   &__brand {
     display: flex;
     align-items: center;
 
-    .header__title {
-      font-size: 1.25rem;
-      font-weight: bold;
+    img {
+      height: 50px;
+      width: 50px;
     }
   }
 
@@ -28,12 +38,12 @@
     gap: 1rem;
 
     .header__link {
-      color: white;
+      color: $white;
       text-decoration: none;
       transition: color 0.3s;
 
       &:hover {
-        color: #d4d4d8;
+        color: $hover-color;
       }
     }
   }
@@ -45,47 +55,43 @@
 
     .header__login-btn {
       background-color: transparent;
-      border: 1px solid white;
+      border: 1px solid $white;
       border-radius: 4px;
       padding: 0.25rem 0.75rem;
-      color: white;
+      color: $gold;
       transition: background-color 0.3s, color 0.3s;
 
       &:hover {
-        background-color: white;
-        color: black;
+        background-color: $white;
+        color: $black;
       }
     }
   }
 
-  /* Responsive styles for smaller screens */
+  // Responsive styles for smaller screens
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
 
-    /* Add a menu toggle button */
     .header__toggle {
       display: block;
       font-size: 1.5rem;
-      color: white;
+      color: $white;
       cursor: pointer;
       margin-bottom: 0.5rem;
     }
 
-    /* Hide menu by default on mobile and show on toggle */
     .header__menu {
       display: none;
       flex-direction: column;
       gap: 0.5rem;
       width: 100%;
+
+      &.active {
+        display: flex;
+      }
     }
 
-    /* Show menu when 'active' class is applied */
-    .header__menu.active {
-      display: flex;
-    }
-
-    /* Actions section stays full width */
     &__actions {
       align-self: stretch;
 
@@ -95,146 +101,81 @@
     }
   }
 }
-// PaymentForm.scss
 
-.payment-container {
+// Menu
+.wealth-advisory {
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  max-width: 1200px;
-  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
 
-  .payment-form {
-    flex: 1;
-    margin-right: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+  .head {
+    text-align: center;
+    margin-bottom: 1rem;
 
-    h2 {
-      margin-bottom: 20px;
-      font-size: 1.5rem;
-      font-weight: bold;
+    .tagline {
+      color: $text-primary;
     }
 
-    .form-group {
-      margin-bottom: 15px;
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+  }
 
-      label {
-        display: block;
-        font-weight: 500;
-        margin-bottom: 5px;
-      }
+  .image-container {
+    margin-bottom: 1.5rem;
 
-      input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        transition: border-color 0.3s;
+    .portfolio-image {
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
 
-        &:focus {
-          border-color: #007BFF;
-          outline: none;
-        }
-      }
+  .download-buttons {
+    display: flex;
+    gap: 1rem;
 
-      button {
-        background-color: #007BFF;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        padding: 10px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+    a {
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+
+      &.google-play {
+        background-color: $bg-primary;
+        color: $text-primary;
 
         &:hover {
-          background-color: #0056b3;
+          background-color: darken($bg-primary, 10%);
         }
       }
-    }
 
-    .checkbox-group {
-      margin: 10px 0;
+      &.app-store {
+        background-color: $bg-primary;
+        color: $text-primary;
 
-      label {
-        display: flex;
-        align-items: center;
-      }
-    }
-
-    .additional-info {
-      margin-top: 15px;
-      padding: 10px;
-      border: 1px dashed #ccc;
-      border-radius: 4px;
-
-      .price {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-
-        .original-price {
-          text-decoration: line-through;
-          color: #888;
+        &:hover {
+          background-color: darken($bg-primary, 10%);
         }
-
-        .discounted-price {
-          font-size: 1.25rem;
-          font-weight: bold;
-        }
-      }
-    }
-
-    .webinar-info {
-      margin-top: 20px;
-
-      h3 {
-        margin-bottom: 10px;
-      }
-
-      img {
-        width: 100%;
-        border-radius: 4px;
-        margin-bottom: 10px;
-      }
-
-      ol {
-        padding-left: 20px;
       }
     }
   }
 
-  .media-section {
-    flex: 0 0 300px;
+  .download-button {
+    margin-top: 2rem;
 
-    img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
+    .download {
+      background-color: darken($bg-primary, 10%);
+      color: lighten($text-primary, 40%);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
 
-    video {
-      width: 100%;
-      border-radius: 8px;
+      &:hover {
+        background-color: darken($bg-primary, 20%);
+      }
     }
   }
 }
-
-@media (max-width: 768px) {
-  .payment-container {
-    flex-direction: column;
-
-    .payment-form {
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
-
-    .media-section {
-      flex: none;
-      margin-top: 20px;
-    }
-  }
-}
-
