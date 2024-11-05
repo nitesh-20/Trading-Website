@@ -1,9 +1,9 @@
 // Variables
-$bg-primary: #2C5F2D;
-$text-primary: #C0C0C0;
-$white: #FFFFFF;
+$bg-primary:  #050708;
+$text-primary: #D0E8C5;
+$white: #ffffff;
 $hover-color: #d4d4d8;
-$gold: #FFD700;
+$gold: #bca20c;
 $black: #000000;
 
 // Universal Reset
@@ -15,13 +15,14 @@ $black: #000000;
 
 // Header
 .header {
-  background-color: $bg-primary;
+  background-color: #bdc3c7;
   color: $text-primary;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  border: 0.5px dotted white;
 
   &__brand {
     display: flex;
@@ -38,7 +39,7 @@ $black: #000000;
     gap: 1rem;
 
     .header__link {
-      color: $white;
+      color: #000000;
       text-decoration: none;
       transition: color 0.3s;
 
@@ -108,6 +109,7 @@ $black: #000000;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  background-color: $bg-primary;
 
   .head {
     text-align: center;
@@ -121,6 +123,7 @@ $black: #000000;
       font-size: 3rem;
       font-weight: bold;
       margin-top: 0.5rem;
+      color: #ffffff;
     }
   }
 
@@ -144,20 +147,20 @@ $black: #000000;
       text-decoration: none;
 
       &.google-play {
-        background-color: $bg-primary;
-        color: $text-primary;
+        background-color: white;
+        color: black;
 
         &:hover {
-          background-color: darken($bg-primary, 10%);
+          background-color: darken(grey, 10%);
         }
       }
 
       &.app-store {
-        background-color: $bg-primary;
-        color: $text-primary;
+        background-color: white;
+        color: black;
 
         &:hover {
-          background-color: darken($bg-primary, 10%);
+          background-color: darken(grey, 10%);
         }
       }
     }
