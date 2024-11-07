@@ -11,7 +11,7 @@ const Menu = () => {
 
       <div className="image-container">
         <img
-          src="https://brokers.education.investing.com/wp-content/uploads/2023/12/CFD-vs-Forex-Trading-Unpacking-the-Differences.jpg"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ85WQME7UPaUERaG2eGJ7KOvo5MggXNHbDWQ&s"
           alt="Portfolio health visuals"
           className="portfolio-image"
         />

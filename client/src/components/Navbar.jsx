@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchOutlined from "@mui/icons-material/SearchOutlined";
-import Logo from '../assets/logo.ico';
+import Logo from '../assets/logo1.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className="header">
       <div className="header__brand">
         <span className="header__title">
-          <img src={Logo} alt="" />
+          {/* <img src={Logo} alt="" /> */}
         </span>
       </div>
       
