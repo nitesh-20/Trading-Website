@@ -1,4 +1,3 @@
-
 // Variables
 $bg-primary: #141E30;
 $text-primary: #D0E8C5;
@@ -6,6 +5,7 @@ $white: #ffffff;
 $hover-color: #d4d4d8;
 $gold: #bca20c;
 $black: #000000;
+$grey: #808080;
 
 // Universal Reset
 * {
@@ -14,22 +14,24 @@ $black: #000000;
   box-sizing: border-box;
 }
 
-// Header
+// Body background and styling
+body {
+  background: $black; // Set the primary background color
+  color: $text-primary;
+}
+
+// Header (Existing header styles remain unchanged)
 .header {
-  // background-color: #0e180c;
-  background: #ee9ca7;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  // background: rgb(249, 246, 246);
+  background: #ee9ca7;
+  background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
   color: black;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  // border: 1px solid #ccc;
-  // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  // border-radius: 8px; // Optional: softens the corners for a more modern look
+  
 
   &__brand {
     display: flex;
@@ -43,7 +45,12 @@ background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, F
 
   &__menu {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
+    text-transform: capitalize;
+    margin-left: 40rem;
+
+
+
 
     .header__link {
       color: #070707;
@@ -62,21 +69,20 @@ background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, F
     gap: 1rem;
 
     .header__login-btn {
-      background-color: transparent;
+      background-color: black;
       border: 1px solid black;
       border-radius: 4px;
       padding: 0.25rem 0.75rem;
-      color: $gold;
+      color: rgb(255, 255, 255);
       transition: background-color 0.3s, color 0.3s;
 
       &:hover {
-        background-color: $white;
+        background-color: white;
         color: $black;
       }
     }
   }
 
-  // Responsive styles for smaller screens
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
@@ -109,89 +115,47 @@ background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, F
     }
   }
 }
-body{
-  background: black;
-}
 
-// Menu
+// Menu (Updated styles for Spline background)
 .wealth-advisory {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  // background-color: $bg-primary;
-  // background: rgb(8, 8, 8);
+  position: relative; // To position Spline background behind text
 
-
-
-  .head {
-    text-align: center;
-    margin-bottom: 1rem;
-
-    .tagline {
-      color: $text-primary;
-    }
-
-    .title {
-      font-family: "Roboto", sans-serif;
-      font-weight: 500;
-      font-style: normal;
-      color: #ffffff;
-    }
-  }
-
-  .image-container {
-    margin-bottom: 1.5rem;
-
-    .portfolio-image {
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-  }
-
-  .download-buttons {
+  .content {
     display: flex;
-    gap: 1rem;
+    justify-content: flex-start; // Align content to the left
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 1; // Ensure text is above the Spline background
 
-    a {
-      padding: 0.75rem;
-      border-radius: 0.5rem;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
+    .text-section {
+      width: 50%; // Text section takes up 50% of the width
+      text-align: left; // Align text to the left
+      color: #fff; // White text for contrast
+      padding-right: 2rem;
 
-      &.google-play {
-        background-color: white;
-        color: black;
-
-        &:hover {
-          background-color: darken(grey, 10%);
-        }
-      }
-
-      &.app-store {
-        background-color: white;
-        color: black;
-
-        &:hover {
-          background-color: darken(grey, 10%);
-        }
+      .title {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+        padding-top: 10rem;
+        color: #ffffff;
       }
     }
-  }
-
-  .download-button {
-    margin-top: 2rem;
-
-    .download {
-      background-color: darken($bg-primary, 10%);
-      color: lighten($text-primary, 40%);
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: darken($bg-primary, 20%);
-      }
+    .money-pa{
+      padding-top: 2rem;
+    }
+    .money-btn{
+      background-color: rgb(255, 242, 242);
+      border: 1px solid black;
+      border-radius: 4px;
+      padding: 0.5rem 0.5rem;
+      color: rgb(8, 8, 8);
+      transition: background-color 0.3s, color 0.3s;
     }
   }
 }

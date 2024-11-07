@@ -17,17 +17,17 @@ const Navbar = () => {
         ☰
       </div> */}
       <div className={`header__menu ${isMenuOpen ? "active" : ""}`}>
-        <a href="#" className="header__link">Trading</a>
-        <a href="#" className="header__link">Investing</a>
-        <a href="#" className="header__link">Top Markets</a>
-        <a href="#" className="header__link">Education</a>
-        <a href="#" className="header__link">Company</a>
+        <a href="#" className="header__link">About</a>
+        <a href="#" className="header__link">TradeSphere</a>
+        <a href="#" className="header__link">MoneyMiner</a>
+        <a href="#" className="header__link">Markets</a>
+        <a href="#" className="header__link">Paper Trading</a>
       </div>
 
       {/* Actions (Login and Search Icon) */}
       <div className="header__actions">
-        <button className="header__login-btn">Login</button>
-        <img aria-hidden="true" alt="search-icon" src="https://openui.fly.dev/openui/24x24.svg?text=🔍" />
+        <button className="header__login-btn">Sign up</button>
+        {/* <img aria-hidden="true" alt="search-icon" src="https://openui.fly.dev/openui/24x24.svg?text=🔍" /> */}
       </div>
     </div>
   );
