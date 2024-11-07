@@ -1,41 +1,60 @@
-// ZerodhaInfo.js
-import React from 'react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const SecondPage = () => {
+  // Example items array with trading-related titles and subtitles
+  const items = [
+    { id: 1, title: 'Stock Market Insights', subtitle: 'Daily updates on market trends' },
+    { id: 2, title: 'Forex Trading Tips', subtitle: 'Top strategies for currency trading' },
+    { id: 3, title: 'Crypto News', subtitle: 'Latest on Bitcoin and Altcoins' }
+  ];
+
+  const [selectedId, setSelectedId] = useState(null);
+
   return (
-    <div className="zerodha-info">
-      {/* Left Section with Text */}
-      <div className="text-content">
-        <h1 className="title">Trusted by Millions</h1>
-        <p className="paragraph">
-          Our priority is you. Over 1.5 crore customers rely on us, investing ₹4.5+ lakh crores and driving 15% of India's daily retail trading volumes.
-        </p>
+    <div>
+      {/* Map over the items and create clickable motion divs */}
+      {items.map(item => (
+        <motion.div
+          key={item.id}
+          layoutId={item.id}
+          onClick={() => setSelectedId(item.id)}
+          style={{
+            padding: '20px',
+            border: '1px solid #ccc',
+            margin: '10px 0',
+            cursor: 'pointer',
+            backgroundColor: '#e0e0e0',  // Grey background color
+          }}
+        >
+          <motion.h5>{item.subtitle}</motion.h5>
+          <motion.h2>{item.title}</motion.h2>
+        </motion.div>
+      ))}
 
-        <h2 className="subtitle">Transparency and Simplicity</h2>
-        <p className="paragraph">
-          No tricks, spam, or distracting notifications. Our user-centered apps offer a smooth experience, empowering you to invest at your own pace.
-        </p>
-
-        <h2 className="subtitle">More Than an App</h2>
-        <p className="paragraph">
-          Experience a complete ecosystem. Our partnerships with 30+ fintech startups bring you specialized services tailored to enhance your financial journey.
-        </p>
-
-        <h2 className="subtitle">Financial Well-being First</h2>
-        <p className="paragraph">
-          With features like Nudge and Kill Switch, we’re more than a platform. We’re here to support smarter financial decisions and sustainable growth.
-        </p>
-
-        <div className="button-group">
-          <a href="#" className="button explore">Explore our products →</a>
-          <a href="#" className="button demo">Try Kite demo →</a>
-        </div>
-      </div>
-
-      {/* Right Section with Image */}
-      <div className="image-section">
-        <img src="path_to_image.jpg" alt="Zerodha graphic" />
-      </div>
+      {/* AnimatePresence for showing the selected item */}
+      <AnimatePresence>
+        {selectedId && (
+          <motion.div
+            layoutId={selectedId}
+            style={{
+              padding: '20px',
+              border: '2px solid #007bff',
+              margin: '20px 0',
+              backgroundColor: '#e0e0e0',  // Grey background for the expanded view
+            }}
+          >
+            <motion.h5>{items.find(item => item.id === selectedId).subtitle}</motion.h5>
+            <motion.h2>{items.find(item => item.id === selectedId).title}</motion.h2>
+            <motion.button
+              onClick={() => setSelectedId(null)}
+              style={{ marginTop: '10px', padding: '5px 10px', cursor: 'pointer' }}
+            >
+              Close
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

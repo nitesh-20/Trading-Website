@@ -21,6 +21,7 @@ const App = () => (
       </Routes> */}
       <Menu />
       <About/>
+      <SecondPage/>
       <Footer />
     </div>
   </Router>

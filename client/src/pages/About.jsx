@@ -1,5 +1,8 @@
 import React from 'react';
 import about from "../assets/about.jpeg"
+import img1 from "../assets/img1.jpeg"
+import img2 from "../assets/img2.jpeg"
+
 const About = () => {
   return (
     <div className="about-container">
@@ -20,7 +23,7 @@ const About = () => {
         </div>
 
         <div className="about-image">
-          <img src={about} alt="Investment Growth" />
+          <img src={img2} alt="Investment Growth" />
         </div>
       </section>
 
