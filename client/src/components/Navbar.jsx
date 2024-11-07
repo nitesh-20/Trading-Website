@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchOutlined from "@mui/icons-material/SearchOutlined";
-import Logo from '../assets/logo1.png';
+import Logo from '../assets/jaihologo.jpeg';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
