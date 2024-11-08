@@ -1,33 +1,34 @@
 import React, { useState } from "react";
-import SearchOutlined from "@mui/icons-material/SearchOutlined";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from '../assets/bg.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSignupClick = () => {
+    navigate('/signup');  // Navigate to the signup page
+  }
 
   return (
     <div className="header">
       <div className="header__brand">
         <span className="header__title">
-          <img src={Logo} alt="" />
+          <img src={Logo} alt="Brand Logo" />
         </span>
       </div>
-      
-      {/* <div className="header__toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        ☰
-      </div> */}
+
       <div className={`header__menu ${isMenuOpen ? "active" : ""}`}>
-        <a href="#" className="header__link">About</a>
-        <a href="#" className="header__link">TradeSphere</a>
-        <a href="#" className="header__link">MoneyMiner</a>
-        <a href="#" className="header__link">Markets</a>
-        <a href="#" className="header__link">Paper Trading</a>
+        <Link to="/about" className="header__link">About</Link>
+        <Link to="/tradesphere" className="header__link">TradeSphere</Link>
+        <Link to="/moneyminer" className="header__link">MoneyMiner</Link>
+        <Link to="/markets" className="header__link">Markets</Link>
+        <Link to="/paper-trading" className="header__link">Paper Trading</Link>
       </div>
 
-      {/* Actions (Login and Search Icon) */}
+      {/* Signup Button */}
       <div className="header__actions">
-        <button className="header__login-btn">Sign up</button>
-        {/* <img aria-hidden="true" alt="search-icon" src="https://openui.fly.dev/openui/24x24.svg?text=🔍" /> */}
+        <button className="header__login-btn" onClick={handleSignupClick}>Sign up</button>
       </div>
     </div>
   );
