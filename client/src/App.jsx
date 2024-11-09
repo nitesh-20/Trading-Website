@@ -15,6 +15,7 @@ import MoneyMiner from './pages/MoneyMiner';
 import Markets from './pages/Markets';
 import PaperTrading from './pages/PaperTrading';
 import Signup from './pages/Signup';
+import SecondPage from './pages/SecondPage';
 
 const App = () => {
   const location = useLocation();
@@ -28,7 +29,7 @@ const App = () => {
       
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/about" element={<About />} />
         <Route path="/tradesphere" element={<TradeSphere />} />
         <Route path="/moneyminer" element={<MoneyMiner />} />
         <Route path="/markets" element={<Markets />} />
@@ -40,6 +41,7 @@ const App = () => {
       {!isSignupPage && (
         <>
           <Menu />
+          <SecondPage/>
           <About/>
           <Footer />
         </>

@@ -18,13 +18,19 @@ $grey: #808080;
 
 // Header
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: whitesmoke;
   color: black;
-  padding: 1rem;
+  padding: 0.3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   &__brand {
     display: flex;

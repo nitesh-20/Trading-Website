@@ -1,62 +1,28 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import './SecondPage.css'; 
 
-const SecondPage = () => {
-  // Example items array with trading-related titles and subtitles
-  const items = [
-    { id: 1, title: 'Stock Market Insights', subtitle: 'Daily updates on market trends' },
-    { id: 2, title: 'Forex Trading Tips', subtitle: 'Top strategies for currency trading' },
-    { id: 3, title: 'Crypto News', subtitle: 'Latest on Bitcoin and Altcoins' }
-  ];
-
-  const [selectedId, setSelectedId] = useState(null);
-
-  return (
-    <div>
-      {/* Map over the items and create clickable motion divs */}
-      {items.map(item => (
-        <motion.div
-          key={item.id}
-          layoutId={item.id}
-          onClick={() => setSelectedId(item.id)}
-          style={{
-            padding: '20px',
-            border: '1px solid #ccc',
-            margin: '10px 0',
-            cursor: 'pointer',
-            backgroundColor: '#e0e0e0',  // Grey background color
-          }}
-        >
-          <motion.h5>{item.subtitle}</motion.h5>
-          <motion.h2>{item.title}</motion.h2>
-        </motion.div>
-      ))}
-
-      {/* AnimatePresence for showing the selected item */}
-      <AnimatePresence>
-        {selectedId && (
-          <motion.div
-            layoutId={selectedId}
-            style={{
-              padding: '20px',
-              border: '2px solid #007bff',
-              margin: '20px 0',
-              backgroundColor: '#e0e0e0',  // Grey background for the expanded view
-            }}
-          >
-            <motion.h5>{items.find(item => item.id === selectedId).subtitle}</motion.h5>
-            <motion.h2>{items.find(item => item.id === selectedId).title}</motion.h2>
-            <motion.button
-              onClick={() => setSelectedId(null)}
-              style={{ marginTop: '10px', padding: '5px 10px', cursor: 'pointer' }}
-            >
-              Close
-            </motion.button>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
-export default SecondPage;
+export default function SecondPage() {
+    return (
+        <div className="second-page-container">
+            <h1 className="second-page-title">JAIHO WEALTH GROW</h1>
+            <p className="second-page-description">
+            Unlock the power of smart investing with JaiHo Wealth Grow. Designed for both seasoned traders and newcomers, our app offers advanced tools for margin trading, real-time charts, and seamless order execution—all in one place. Trusted by thousands, JaiHo Wealth Grow evolves continuously to give you a competitive edge, helping you grow your wealth with confidence.
+          </p>
+            <button className="second-page-btn">
+                Explore JWG →
+            </button>
+            <div className="second-page-images">
+                <img
+                    alt="Mobile trading app interface"
+                    src="https://i.pinimg.com/474x/83/b6/82/83b682e605f4dc0782d951d144fa954c.jpg"
+                    className="second-page-image"
+                />
+                <img
+                    alt="Mobile trading app interface"
+                    src="https://openui.fly.dev/openui/300x500.svg?text=Mobile+App"
+                    className="second-page-image"
+                />
+            </div>
+        </div>
+    );
+}

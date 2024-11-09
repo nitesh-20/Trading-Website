@@ -41,7 +41,7 @@ const Menu = () => {
             {/* Divider Line */}
             <div className="divider"></div>
 
-{/* New Section */}
+{/* New Section
 <div className="new-section">
 <div className="widget bg-card text-card-foreground p-6 rounded-lg shadow-lg">
       <h2 className="widget-title">PORTFOLIO HEALTH</h2>
@@ -64,10 +64,10 @@ const Menu = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
 
   {/* Add any additional content for this section */}
-</div>
+{/* </div> */}
 
     </div>
   );
