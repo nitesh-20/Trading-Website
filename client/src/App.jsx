@@ -28,7 +28,7 @@ const App = () => {
       
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        {/* <Route path="/about" element={<About />} /> */}
         <Route path="/tradesphere" element={<TradeSphere />} />
         <Route path="/moneyminer" element={<MoneyMiner />} />
         <Route path="/markets" element={<Markets />} />
@@ -40,6 +40,7 @@ const App = () => {
       {!isSignupPage && (
         <>
           <Menu />
+          <About/>
           <Footer />
         </>
       )}

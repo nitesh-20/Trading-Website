@@ -1,7 +1,7 @@
 import React from 'react';
 import {motion} from 'framer-motion'
 import {fadeIn} from "../variants"
-
+import Right from "../assets/ALLY.gif"
 const Menu = () => {
   
   return (
@@ -26,8 +26,8 @@ const Menu = () => {
         </motion.div>
        
         <div className="right-contain">
-         {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7CVJu8poNPfXME1CssZlAFIy3kCaq2q15Mg&s" alt="" /> */}
-        </div>
+          <img className='right-img' src={Right} alt="" />
+                </div>
         
       </div>
       <motion.div
