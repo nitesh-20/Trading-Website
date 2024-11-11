@@ -27,7 +27,7 @@ const Menu = () => {
        
         <div className="right-contain">
           <img className='right-img' src={Right} alt="" />
-                </div>
+         </div>
         
       </div>
       <motion.div
@@ -41,33 +41,6 @@ const Menu = () => {
             {/* Divider Line */}
             <div className="divider"></div>
 
-{/* New Section
-<div className="new-section">
-<div className="widget bg-card text-card-foreground p-6 rounded-lg shadow-lg">
-      <h2 className="widget-title">PORTFOLIO HEALTH</h2>
-      <h3 className="widget-subtitle">Track & Manage Your Portfolio Effortlessly</h3>
-      <p className="widget-description">Identify concerns, get detailed performance insights & fix critical issues.</p>
-      <div className="widget-stats">
-        <div className="widget-stat">$2 Bn+</div>
-        <div className="widget-stat">1 Mn+</div>
-      </div>
-      <div className="widget-stat-labels">
-        <div className="widget-label">Assets Powered</div>
-        <div className="widget-label">Portfolio Analyzed</div>
-      </div>
-      <div className="widget-insights">
-        <h4 className="widget-insights-title">All portfolio insights in a single click</h4>
-        <div className="widget-insights-box">
-          <div className="widget-forecast">
-            <span className="widget-forecast-text">→ 21.2% potential returns</span>
-            <img alt="portfolio-forecast" src="https://openui.fly.dev/openui/100x50.svg?text=📈" className="widget-forecast-icon" />
-          </div>
-        </div>
-      </div>
-    </div> */}
-
-  {/* Add any additional content for this section */}
-{/* </div> */}
 
     </div>
   );
