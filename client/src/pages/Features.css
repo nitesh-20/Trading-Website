@@ -1,0 +1,67 @@
+.widget-container {
+    background-color: rgb(75, 74, 74);
+    padding: 3rem;
+    height: 100vh;
+}
+.widget-head {
+    font-size: 1.5rem; /* Equivalent to text-3xl */
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+    color: rgb(232, 86, 230);
+    margin-bottom: 1rem;
+}
+.widget-title {
+    font-size: 2.5rem; /* Equivalent to text-3xl */
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.widget-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .widget-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .widget-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.widget-card {
+    background-color: var(--card);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    img{
+        border-radius: 1rem;
+    }
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+}
+
+.card-description {
+    color: white;
+    padding-top: 1rem;
+}

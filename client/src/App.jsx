@@ -16,6 +16,7 @@ import Markets from './pages/Markets';
 import PaperTrading from './pages/PaperTrading';
 import Signup from './pages/Signup';
 import SecondPage from './pages/SecondPage';
+import Features from './pages/Features';
 
 const App = () => {
   const location = useLocation();
@@ -42,6 +43,7 @@ const App = () => {
         <>
           <Menu />
           <SecondPage/>
+          <Features/>
           <About/>
           <Footer />
         </>
