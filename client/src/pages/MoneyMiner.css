@@ -1,0 +1,124 @@
+.moneyminer-page {
+    background-color: #1e1e2f;
+    color: #ffffff;
+    padding: 6rem;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .moneyminer-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .moneyminer-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #e9b44c;
+  }
+  
+  .moneyminer-header p {
+    font-size: 1.2rem;
+    color: #cccccc;
+  }
+  
+  .moneyminer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .feature-card {
+    background-color: #292946;
+    border: 2px solid #444466;
+    border-radius: 10px;
+    padding: 1.5rem;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .feature-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #e9b44c;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #d3d3d3;
+  }
+  
+  .moneyminer-stats {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .moneyminer-stats h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #e9b44c;
+  }
+  
+  .stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .stats-item {
+    background-color: #292946;
+    border: 2px solid #444466;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+  
+  .stats-item h3 {
+    font-size: 2rem;
+    color: #e9b44c;
+  }
+  
+  .stats-item p {
+    font-size: 1rem;
+    color: #d3d3d3;
+  }
+  
+  .moneyminer-call-to-action {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .moneyminer-call-to-action h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .moneyminer-call-to-action p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #cccccc;
+  }
+  
+  .cta-button {
+    background-color: #e9b44c;
+    color: #1e1e2f;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #d4a038;
+  }
+  

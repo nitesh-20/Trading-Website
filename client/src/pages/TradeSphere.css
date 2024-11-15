@@ -1,0 +1,55 @@
+.tradesphere-page {
+    background: linear-gradient(135deg, #0f0c29, #24243e, #302b63, #0f0c29);
+    color: white;
+    min-height: 100vh;
+    padding: 6rem;
+  
+    .tradesphere-header {
+      text-align: center;
+      margin-bottom: 3rem;
+  
+      h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        color: #ccc;
+      }
+    }
+  
+    .tradesphere-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+  
+      .card {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        padding: 1.5rem;
+        max-width: 300px;
+        text-align: center;
+        transition: transform 0.3s ease, background 0.3s ease;
+  
+        &:hover {
+          transform: translateY(-10px);
+          background: rgba(255, 255, 255, 0.2);
+        }
+  
+        h2 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+  
+        p {
+          font-size: 1rem;
+          color: #ddd;
+        }
+      }
+    }
+  }
+  
