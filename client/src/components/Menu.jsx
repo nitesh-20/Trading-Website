@@ -19,7 +19,7 @@ const Menu = () => {
           <h1 className="title">Global #1 Trusted 
           <br />Wealth Research
            Platform</h1>
-
+           <p className='desc'>Generate proposals, create reports, manage tax-loss harvesting, and rebalance portfolios—all in one unified account. Powered by advanced AI, we seamlessly integrate every asset class and strategy to simplify your investment process</p>
            <div className='money-pa'>
           <button className='money-btn'>Your Ultimate Money Making</button>
         </div>

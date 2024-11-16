@@ -22,12 +22,11 @@ $grey: #808080;
   top: 0;
   left: 0;
   width: 100%;
-  background: whitesmoke;
+  background: #F4F5F9;
   color: black;
   padding: 0.3rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -39,20 +38,22 @@ $grey: #808080;
     img {
       height: 50px;
       width: 60px;
+      margin-left:3rem;
     }
   }
 
   &__menu {
     display: flex;
-    gap: 2rem;
+    gap: 4rem;
     text-transform: capitalize;
-    margin-left: 40rem;
+    margin-left: 20rem;
 
     .header__link {
       position: relative;
       color: #070707;
       text-decoration: none;
       transition: color 0.3s;
+      gap: 4rem;
 
       &:hover {
         color: rgba(147, 121, 24, 0.954);
@@ -78,8 +79,9 @@ $grey: #808080;
   &__actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
-
+    gap: 3rem;
+    margin-left: 10rem; /* Added margin to push the actions section to the right */
+    
     .header__login-btn {
       background-color: black;
       border: 1px solid black;
@@ -129,13 +131,14 @@ $grey: #808080;
   }
 }
 
+
 // Menu
 .wealth-advisory {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 8rem;
-  background: $black;
+  background: #F4F5F9;
   color: $text-primary;
   height: 100vh;
 
@@ -150,34 +153,41 @@ $grey: #808080;
     .text-section {
       width: 50%;
       text-align: left;
-      color: white;
+      color: rgb(5, 5, 5);
       padding-right: 2rem;
 
       .title {
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-weight: 400;
-        font-size: 2.5rem;
-        padding-top: 3rem;
-        color: white;
+        font-weight: 500;
+        font-size: 3rem;
+        padding-top: 1rem;
+        background: linear-gradient(95deg, #6ed9c6 -2.79%, #744de4 63.84%);
+        -webkit-background-clip: text; /* Required for Safari */
+        color: transparent; /* Make the text color transparent */
+      }      
+      .desc{
+        padding-top: 2rem;
+        font-size: 1.5rem;
       }
     }
 
     .money-pa {
-      padding-top: 2rem;
+      padding-top: 4rem;
+
     }
 
     .money-btn {
-      background-color: rgb(242, 254, 255);
+      background-color: black;
       border: 1px solid black;
       border-radius: 4px;
       padding: 0.5rem;
-      color: rgb(8, 8, 8);
+      color: rgb(250, 249, 249);
       transition: background-color 0.3s, color 0.3s;
       cursor: pointer;
 
       &:hover {
-        background-color: rgb(0, 0, 0);
-        color: white;
+        background-color: rgb(24, 24, 24);
+        color: rgb(172, 170, 170);
       }
     }
   }
@@ -195,7 +205,7 @@ $grey: #808080;
     transition: background-color 0.3s, color 0.3s;
 
     &:hover {
-      background-color: rgb(19, 183, 205);
+      background-color: rgb(52, 54, 54);
       color: white;
     }
   }
