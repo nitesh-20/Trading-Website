@@ -1,7 +1,7 @@
 /* Main Container */
 .markets-container {
     background-color: #f9f9f9; /* Light background */
-    padding: 1rem;
+    padding-top: 6rem;
     border-radius: 8px;
     height: 100vh;
   }
