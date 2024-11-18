@@ -4,6 +4,15 @@ import './MoneyMiner.css';
 const MoneyMiner = () => {
   return (
     <div className="moneyminer-page">
+      <div>
+      <iframe class="bot"
+        allow="microphone;"
+        font-family="monospace"
+        width="350"
+        height="430"
+        src="https://console.dialogflow.com/api-client/demo/embedded/f6e2bcc2-aa78-40e8-8b5f-019a3dae2d0f">
+    </iframe>
+      </div>
       <header className="moneyminer-header">
         <h1>Welcome to MoneyMiner</h1>
         <p>Unlock the power of mining profitable opportunities.</p>
