@@ -13,7 +13,7 @@ const MoneyMiner = () => {
         src="https://console.dialogflow.com/api-client/demo/embedded/f6e2bcc2-aa78-40e8-8b5f-019a3dae2d0f">
     </iframe>
       </div>
-      <header className="moneyminer-header">
+      {/* <header className="moneyminer-header">
         <h1>Welcome to MoneyMiner</h1>
         <p>Unlock the power of mining profitable opportunities.</p>
       </header>
@@ -55,7 +55,7 @@ const MoneyMiner = () => {
         <h2>Start Your Mining Journey Today</h2>
         <p>Join MoneyMiner and gain access to tools and insights that help you maximize your returns.</p>
         <button className="cta-button">Get Started</button>
-      </section>
+      </section> */}
     </div>
   );
 };
