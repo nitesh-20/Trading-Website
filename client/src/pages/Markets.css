@@ -1,82 +1,207 @@
-/* Main Container */
+/* General Styles */
 .markets-container {
-    background-color: #f9f9f9; /* Light background */
-    padding-top: 6rem;
-    border-radius: 8px;
-    height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #24243e);
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  padding: 3rem;
+  min-height: 100vh;
+}
+
+header.markets-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+header.markets-header h1 {
+  font-size: 2.5rem;
+  color: #e9b44c;
+}
+
+header.markets-header p {
+  font-size: 1.2rem;
+  color: #cccccc;
+}
+
+/* Live Markets Section */
+.live-markets {
+  margin-bottom: 3rem;
+}
+
+.live-markets h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #e9b44c;
+}
+
+.market-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.market-card {
+  background: #292946;
+  border: 2px solid #444466;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.market-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.market-card h3 {
+  font-size: 1.5rem;
+  color: #e9b44c;
+  margin-bottom: 0.5rem;
+}
+
+.market-card .price {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.market-card .price .positive {
+  color: #4caf50;
+}
+
+.market-card .price .negative {
+  color: #f44336;
+}
+
+.market-card p {
+  font-size: 1rem;
+  color: #d3d3d3;
+}
+
+/* Trading Tools Section */
+.trading-tools {
+  margin-bottom: 3rem;
+}
+
+.trading-tools h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #e9b44c;
+}
+
+.tool-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tool-card {
+  background: #292946;
+  border: 2px solid #444466;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tool-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #e9b44c;
+}
+
+.tool-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #d3d3d3;
+}
+
+.tool-card button {
+  background: #e9b44c;
+  color: #1e1e2f;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tool-card button:hover {
+  background: #d4a038;
+}
+
+/* Featured News Section */
+.featured-news {
+  margin-bottom: 3rem;
+}
+
+.featured-news h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #e9b44c;
+}
+
+.news-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.news-card {
+  background: #292946;
+  border: 2px solid #444466;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.news-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #e9b44c;
+}
+
+.news-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #d3d3d3;
+}
+
+.news-card a {
+  font-size: 1rem;
+  color: #4caf50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.news-card a:hover {
+  color: #76ff03;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .market-grid, .tool-grid, .news-grid {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  /* Title */
-  .markets-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 1rem;
-  }
-  .stock-symbol{
-    padding-top: 4rem;
-  }
-  
-  /* Grid */
-  .stocks-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  @media (min-width: 640px) {
-    .stocks-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .stocks-grid {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-  }
-  
-  /* Individual Stock Card */
-  .stock-card {
-    background-color: #ffffff; /* Light card background */
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  /* Stock Symbol */
-  .stock-symbol {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #333;
-    margin-top: 0.5rem;
-  }
-  
-  /* Stock Name */
-  .stock-name {
-    color: #666;
-    margin-top: 0.25rem;
-  }
-  
-  /* Stock Price */
-  .stock-price {
-    font-size: 1rem;
-    color: #333;
-    margin-top: 0.5rem;
-  }
-  
-  /* Price Change */
-  .price-change {
-    color: #2f855a; /* Dark green for positive change */
-    font-weight: bold;
-  }
-  
-  /* Exchange Information */
-  .exchange-info {
-    margin-top: 1.5rem;
-    color: #666;
-    font-size: 0.875rem;
-  }
-  
+}

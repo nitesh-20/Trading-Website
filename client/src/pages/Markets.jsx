@@ -1,39 +1,78 @@
 import React from 'react';
 import './Markets.css';
 
-export default function Markets() {
+const Markets = () => {
   return (
     <div className="markets-container">
-      <h2 className="markets-title">Explore Stocks</h2>
-      <div className="stocks-grid">
-        <div className="stock-card">
-          <img alt="Microsoft logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2d8ceLz9sbD4RdEHPJbA-d9ir6uK7ZzO_zg&s" />
-          <h3 className="stock-symbol">MSFT</h3>
-          <p className="stock-name">Microsoft</p>
-          <p className="stock-price">425.43 <span className="price-change">+1.25%</span></p>
+      <header className="markets-header">
+        <h1>Market Trends & Insights</h1>
+        <p>Stay ahead in trading with real-time updates, analytics, and tools designed to empower your decisions.</p>
+      </header>
+
+      <section className="live-markets">
+        <h2>Live Market Updates</h2>
+        <div className="market-grid">
+          <div className="market-card">
+            <h3>NASDAQ</h3>
+            <p className="price">14,200.30 <span className="change positive">+1.23%</span></p>
+            <p>Tech stocks on the rise!</p>
+          </div>
+          <div className="market-card">
+            <h3>SENSEX</h3>
+            <p className="price">61,200.45 <span className="change negative">-0.56%</span></p>
+            <p>Mixed performance in Indian markets.</p>
+          </div>
+          <div className="market-card">
+            <h3>FTSE 100</h3>
+            <p className="price">7,345.60 <span className="change positive">+0.89%</span></p>
+            <p>European markets gaining momentum.</p>
+          </div>
         </div>
-        <div className="stock-card">
-          <img alt="Apple logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6RACuKQ8sJxNXI17b6tLyd4vmhraPT5OYmw&s" />
-          <h3 className="stock-symbol">AAPLE</h3>
-          <p className="stock-name">Apple</p>
-          <p className="stock-price">227.48 <span className="price-change">+2.14%</span></p>
+      </section>
+
+      <section className="trading-tools">
+        <h2>Trading Tools</h2>
+        <div className="tool-grid">
+          <div className="tool-card">
+            <h3>Stock Screener</h3>
+            <p>Find stocks that meet your criteria with customizable filters.</p>
+            <button>Try Now</button>
+          </div>
+          <div className="tool-card">
+            <h3>Technical Analysis</h3>
+            <p>Analyze market trends using advanced charting tools.</p>
+            <button>Explore</button>
+          </div>
+          <div className="tool-card">
+            <h3>Risk Calculator</h3>
+            <p>Manage your trades effectively by calculating risks and rewards.</p>
+            <button>Calculate</button>
+          </div>
         </div>
-        <div className="stock-card">
-          <img alt="Meta logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMtdzKPDmF4BYfI0WCuTY416jnhZiJeAK-rg&s" />
-          <h3 className="stock-symbol">META</h3>
-          <p className="stock-name">Meta Platforms Inc</p>
-          <p className="stock-price">591.70 <span className="price-change">+3.44%</span></p>
+      </section>
+
+      <section className="featured-news">
+        <h2>Featured News</h2>
+        <div className="news-grid">
+          <div className="news-card">
+            <h3>Global Markets Soar</h3>
+            <p>Tech sector drives growth across major markets.</p>
+            <a href="#">Read More</a>
+          </div>
+          <div className="news-card">
+            <h3>Crypto Regulation Updates</h3>
+            <p>Governments take a step closer to regulating digital assets.</p>
+            <a href="#">Read More</a>
+          </div>
+          <div className="news-card">
+            <h3>Gold Prices Drop</h3>
+            <p>Investors shift focus to equities as risk appetite increases.</p>
+            <a href="#">Read More</a>
+          </div>
         </div>
-        <div className="stock-card">
-          <img alt="Google logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiEndPkpxU-FDOQK0acJ6iuFECTI914xOelQ&s" />
-          <h3 className="stock-symbol">GOOGLE</h3>
-          <p className="stock-name">Alphabet</p>
-          <p className="stock-price">591.70 <span className="price-change">+3.44%</span></p>
-        </div>
-      </div>
-      <div className="exchange-info">
-        <p>Exchange - Tech • Software • Durable Goods • Financial Services • Med Tech • Retail • Consumable Goods • Entertainment</p>
-      </div>
+      </section>
     </div>
   );
-}
+};
+
+export default Markets;
