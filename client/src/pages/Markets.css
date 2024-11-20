@@ -1,207 +1,67 @@
-/* General Styles */
 .markets-container {
-  background: linear-gradient(135deg, #0f0c29, #24243e);
-  color: #ffffff;
-  font-family: 'Arial', sans-serif;
-  padding: 3rem;
-  min-height: 100vh;
+  padding-top: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
 }
 
-header.markets-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-header.markets-header h1 {
-  font-size: 2.5rem;
-  color: #e9b44c;
-}
-
-header.markets-header p {
-  font-size: 1.2rem;
-  color: #cccccc;
-}
-
-/* Live Markets Section */
-.live-markets {
-  margin-bottom: 3rem;
-}
-
-.live-markets h2 {
+.markets-title {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  font-weight: bold;
   text-align: center;
-  color: #e9b44c;
+  margin-bottom: 2rem;
+  color: #ffa500;
 }
 
-.market-grid {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
+.tradingview-widget-container {
+  width: 100%;
+  height: 600px;
+  margin-top: 2rem;
 }
 
-.market-card {
-  background: #292946;
-  border: 2px solid #444466;
-  border-radius: 10px;
-  padding: 1.5rem;
-  width: 300px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.market-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.market-card h3 {
-  font-size: 1.5rem;
-  color: #e9b44c;
-  margin-bottom: 0.5rem;
-}
-
-.market-card .price {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.market-card .price .positive {
-  color: #4caf50;
-}
-
-.market-card .price .negative {
-  color: #f44336;
-}
-
-.market-card p {
-  font-size: 1rem;
-  color: #d3d3d3;
-}
-
-/* Trading Tools Section */
-.trading-tools {
-  margin-bottom: 3rem;
-}
-
-.trading-tools h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #e9b44c;
-}
-
-.tool-grid {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.tool-card {
-  background: #292946;
-  border: 2px solid #444466;
-  border-radius: 10px;
-  padding: 1.5rem;
-  width: 300px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tool-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.tool-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #e9b44c;
-}
-
-.tool-card p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #d3d3d3;
-}
-
-.tool-card button {
-  background: #e9b44c;
-  color: #1e1e2f;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.tool-card button:hover {
-  background: #d4a038;
-}
-
-/* Featured News Section */
-.featured-news {
-  margin-bottom: 3rem;
-}
-
-.featured-news h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #e9b44c;
-}
-
-.news-grid {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.news-card {
-  background: #292946;
-  border: 2px solid #444466;
-  border-radius: 10px;
-  padding: 1.5rem;
-  width: 300px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.news-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.news-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #e9b44c;
-}
-
-.news-card p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #d3d3d3;
-}
-
-.news-card a {
-  font-size: 1rem;
-  color: #4caf50;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.news-card a:hover {
-  color: #76ff03;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .market-grid, .tool-grid, .news-grid {
-    flex-direction: column;
-    align-items: center;
+  .tradingview-widget-container {
+    height: 400px;
+  }
+}
+.markets-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.markets-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffa500;
+}
+
+.symbol-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.symbol-selector select {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #1f1f2e;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.tradingview-widget-container {
+  width: 100%;
+  height: 600px;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .tradingview-widget-container {
+    height: 400px;
   }
 }

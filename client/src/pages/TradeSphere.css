@@ -1,8 +1,6 @@
-body {
-  margin: 0;
+.tradesphere-body {
   padding-top: 6rem;
   font-family: 'Arial', sans-serif;
-  background-color: #121212;
   color: #fff;
 }
 
