@@ -1,5 +1,5 @@
 import React from 'react';
-import './manage.css';
+import './Manage.css';
 
 const Manage = () => (
     <div className="manage-container">

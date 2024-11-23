@@ -1,5 +1,5 @@
 import React from 'react';
-import './features.css';
+import './Features.css';
 
 const Widget = () => (
     <div className="widget-container">
