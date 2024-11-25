@@ -13,7 +13,6 @@ import MoneyMiner from './pages/MoneyMiner';
 import Markets from './pages/Markets';
 import PaperTrading from './pages/PaperTrading';
 import Signup from './pages/Signup';
-import SecondPage from './Menu/SecondPage';
 import Features from './Menu/Features';
 import Manage from './Menu/Manage';
 
@@ -37,7 +36,6 @@ const App = () => {
       {!isMinimalPage && (
         <>
           <Menu />
-          {/* <SecondPage /> */}
           <Features />
           <Manage />
           {/* <About /> */}
