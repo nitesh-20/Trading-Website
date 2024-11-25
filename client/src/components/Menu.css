@@ -15,96 +15,97 @@
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
+    gap: 2rem; /* Add gap for better spacing */
+  }
 
-    .text-section {
-      flex: 1 1 45%; /* Flexible width */
-      text-align: left;
-      color: rgb(5, 5, 5);
-      padding-right: 2rem;
+  .text-section {
+    flex: 1 1 45%; /* Flexible width */
+    text-align: left;
+    color: rgb(5, 5, 5);
+    padding-right: 2rem;
 
-      .title {
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-weight: 500;
-        font-size: 2.5rem;
-        padding-top: 6rem;
-        background: linear-gradient(95deg, #6ed9c6 -2.79%, #744de4 63.84%);
-        -webkit-background-clip: text;
-        color: transparent;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .desc {
-        padding-top: 2rem;
-        font-size: 1.2rem;
-        line-height: 1.6;
-        color: #333333;
-        font-family: "Host Grotesk", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-      }
-
-      .money-pa {
-        padding-top: 2rem;
-      }
-
-      .money-btn {
-        background-color: #000000;
-        border: 1px solid #000000;
-        border-radius: 4px;
-        padding: 0.5rem;
-        color: #faf9f9;
-        transition: background-color 0.3s, color 0.3s;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #181818;
-          color: #acaaaa;
-        }
-      }
+    .title {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-weight: 500;
+      font-size: 2.5rem;
+      padding-top: 6rem;
+      background: linear-gradient(95deg, #6ed9c6 -2.79%, #744de4 63.84%);
+      -webkit-background-clip: text;
+      color: transparent;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .right-contain {
-      flex: 1 1 45%; /* Flexible width */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 2rem; /* Space for smaller screens */
+    .desc {
+      padding-top: 2rem;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #333333;
+      font-family: "Host Grotesk", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+    }
 
-      video {
-        width: 100%;
-        max-height: 60vh; /* Prevent the video from exceeding 60% of screen height */
-        object-fit: cover;
-        border-radius: 10px;
+    .money-pa {
+      padding-top: 2rem;
+    }
+
+    .money-btn {
+      background-color: #000000;
+      border: 1px solid #000000;
+      border-radius: 4px;
+      padding: 0.5rem;
+      color: #faf9f9;
+      transition: background-color 0.3s, color 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #181818;
+        color: #acaaaa;
       }
     }
   }
 
-  .signup {
-    padding-top: 1rem;
-  }
+  .right-contain {
+    flex: 1 1 45%; /* Flexible width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem; /* Space for smaller screens */
 
-  .sign-btn {
-    background: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    padding: 1rem;
-    color: #000000;
-    transition: background-color 0.3s, color 0.3s;
-
-    &:hover {
-      background-color: #343636;
-      color: #ffffff;
+    video {
+      width: 100%;
+      max-height: 60vh; /* Prevent the video from exceeding 60% of screen height */
+      object-fit: cover;
+      border-radius: 10px;
     }
   }
+}
 
-  .divider {
-    margin-top: 4rem;
-    height: 2px;
-    background-color: #e0e0e0;
-    width: 100%;
+.signup {
+  padding-top: 1rem;
+}
+
+.sign-btn {
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding: 1rem;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #343636;
+    color: #ffffff;
   }
+}
+
+.divider {
+  margin-top: 4rem;
+  height: 2px;
+  background-color: #e0e0e0;
+  width: 100%;
 }
 
 /* Media Queries for Smaller Screens */

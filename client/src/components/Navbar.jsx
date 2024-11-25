@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from '../assets/bg.png';
+import "./Navbar.css"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleSignupClick = () => {
-    navigate('/signup');  // Navigate to the signup page
+    navigate('/signup');  
+  }
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);  
   }
 
   return (
@@ -15,7 +20,7 @@ const Navbar = () => {
       <div className="header__brand">
         <span className="header__title">
           <Link to="/">
-          <img src={Logo} alt="Brand Logo" />
+            <img src={Logo} alt="Brand Logo" />
           </Link>
         </span>
       </div>
@@ -28,9 +33,14 @@ const Navbar = () => {
         <Link to="/paper-trading" className="header__link">Paper Trading</Link>
       </div>
 
-      {/* Signup Button */}
       <div className="header__actions">
         <button className="header__login-btn" onClick={handleSignupClick}>Sign up</button>
+      </div>
+
+      <div className="header__hamburger" onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   );
