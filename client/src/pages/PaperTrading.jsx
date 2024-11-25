@@ -1,7 +1,39 @@
 import React from 'react';
+import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import './PaperTrading.css';
 
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+
 const PaperTrading = () => {
+  const data = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+    datasets: [
+      {
+        label: 'Stock Price',
+        data: [120, 135, 150, 145, 160, 175, 180],
+        fill: false,
+        borderColor: 'rgba(75,192,192,1)',
+        tension: 0.1,
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Stock Price Over Time',
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: false,
+      },
+    },
+  };
+
   return (
     <div className="papertrading-page">
       <header className="papertrading-header">
@@ -22,6 +54,13 @@ const PaperTrading = () => {
         <div className="benefit-card">
           <h3>Sharpen Your Skills</h3>
           <p>Build confidence and refine your trading strategies over time.</p>
+        </div>
+      </section>
+
+      <section className="chart-section">
+        <h2>Stock Price Chart</h2>
+        <div className="chart-container">
+          <Line data={data} options={options} />
         </div>
       </section>
 

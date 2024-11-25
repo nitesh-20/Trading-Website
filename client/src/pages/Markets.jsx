@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Markets.css';
 
 const Markets = () => {
-  const [symbol, setSymbol] = useState('AAPL'); // Default symbol
+  const [symbol, setSymbol] = useState('IRFC'); // Default symbol
 
   useEffect(() => {
     // Dynamically load TradingView's script
@@ -37,11 +37,14 @@ const Markets = () => {
       {/* Dropdown to select symbol */}
       <div className="symbol-selector">
         <select onChange={(e) => setSymbol(e.target.value)} value={symbol}>
-          <option value="AAPL">Apple (AAPL)</option>
-          <option value="GOOG">Google (GOOG)</option>
-          <option value="MSFT">Microsoft (MSFT)</option>
-          <option value="BTCUSD">Bitcoin (BTC/USD)</option>
-          <option value="ETHUSD">Ethereum (ETH/USD)</option>
+        <option value="SUNPHARMA">Sun Pharma</option>
+          <option value="RELIANCE">Reliance</option>
+          <option value="HDFC">HDFC</option>
+          <option value="IRFC">IRFC</option>
+          <option value="HINDUNILVR">Hindustan Unilever</option>
+          <option value="LT">L&T</option>
+          <option value="TCS">TCS</option>
+          
         </select>
       </div>
 
