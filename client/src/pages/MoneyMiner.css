@@ -140,3 +140,22 @@ button:disabled {
 button:disabled:hover {
   transform: none;
 }
+
+/* Dialogflow Messenger */
+df-messenger {
+  z-index: 999;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  --df-messenger-font-color: #000;
+  --df-messenger-font-family: Google Sans;
+  --df-messenger-chat-background: #f3f6fc;
+  --df-messenger-message-user-background: #d3e3fd;
+  --df-messenger-message-bot-background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+df-messenger .df-messenger-chat-wrapper {
+  border-radius: 15px;
+}

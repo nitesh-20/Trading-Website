@@ -9,7 +9,6 @@ function MoneyMiner() {
 
   const chatContainerRef = useRef(null);
 
-  // Scroll to the bottom of the chat history whenever it updates
   useEffect(() => {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
@@ -22,9 +21,8 @@ function MoneyMiner() {
 
     setGeneratingAnswer(true);
     const currentQuestion = question;
-    setQuestion(""); // Clear the input immediately
+    setQuestion("");
 
-    // Add user's question to chat history
     setChatHistory((prev) => [...prev, { type: "question", content: currentQuestion }]);
 
     try {
@@ -36,11 +34,8 @@ function MoneyMiner() {
         },
       });
 
-      // Extract AI's response from the API response
       const aiResponse =
         response.data?.candidates?.[0]?.content?.parts?.[0]?.text || "No response received.";
-
-      // Add AI's response to chat history
       setChatHistory((prev) => [...prev, { type: "answer", content: aiResponse }]);
     } catch (error) {
       console.error("Error generating answer:", error);
@@ -53,13 +48,20 @@ function MoneyMiner() {
     setGeneratingAnswer(false);
   }
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src =
+      "https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <div className="chat-container">
       <header className="chat-header">
         <h1>MoneyMiner</h1>
       </header>
 
-      {/* Chat History */}
       <div className="chat-history" ref={chatContainerRef}>
         {chatHistory.length === 0 ? (
           <p className="welcome-message">Welcome to MoneyMiner! Ask me anything.</p>
@@ -73,10 +75,11 @@ function MoneyMiner() {
             </div>
           ))
         )}
-        {generatingAnswer && <div className="chat-bubble answer">Typing...</div>}
+        {generatingAnswer && (
+          <div className="chat-bubble answer typing">Typing...</div>
+        )}
       </div>
 
-      {/* Input Form */}
       <form className="chat-input-form" onSubmit={generateAnswer}>
         <textarea
           value={question}
@@ -89,6 +92,14 @@ function MoneyMiner() {
           Send
         </button>
       </form>
+
+      {/* Dialogflow Messenger */}
+      <df-messenger
+        intent="WELCOME"
+        chat-title="MINERMONEY"
+        agent-id="49107a35-b822-495f-afd5-af432732704f"
+        language-code="en"
+      ></df-messenger>
     </div>
   );
 }
