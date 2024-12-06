@@ -5,11 +5,9 @@ const Manage = () => (
     <div className="manage-container">
         <div className="manage-content">
             <div className="manage-text">
-                <h1 className="manage-heading">Manage all your <br />
-                investments
-                 all over the world</h1>
+                <h1 className="manage-heading">AI - Powered Chat-bot</h1>
                 <p className="manage-description">
-                Effortlessly manage your investments with real-time updates, analytics, and global market insights
+                Ask Qustions, and Learn!
                 </p>
             </div>
             <div className="manage-image">

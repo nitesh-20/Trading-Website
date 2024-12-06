@@ -1,3 +1,5 @@
+//static page and under development
+
 import React from 'react';
 import './TradeSphere.css'; // Import the CSS file
 
@@ -10,7 +12,7 @@ const TradeSphere = () => {
       </div>
 
       <div className="tradesphere-container">
-        <h2 className="tradesphere-title">All Upcoming Matches</h2>
+        <h2 className="tradesphere-title">All Upcoming Trading Contests</h2>
 
         {/* Match List */}
         {matches.map((match, index) => (

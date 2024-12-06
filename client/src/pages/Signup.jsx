@@ -26,7 +26,7 @@ const SignupPage = () => {
     <div className="signup-container">
       <div className="left-panel">
         <div className="logo-container">
-          {/* <img src="https://openui.fly.dev/openui/24x24.svg?text=LOGO" alt="Logo" className="logo" /> */}
+          
         </div>
         <h1 className="welcome-title">Welcome to Our Platform</h1>
         <p className="description">Sign up to create a new account</p>

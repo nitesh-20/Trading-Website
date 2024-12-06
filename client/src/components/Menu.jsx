@@ -17,11 +17,10 @@ const Menu = () => {
             className="text-section"
           >
             <h1 className="title">
-              Global #1 Trusted <br />
-              Wealth Research Platform
+            JaiHo WealthGroup <br />
             </h1>
             <p className="desc">
-            Generate proposals, create reports, and manage portfolios with ease. Our AI-powered platform ensures simplicity and delivers a 15% profit every month.
+            Generate proposals,Empower Your Trades: Live Insights, Smart Analysis, AI-Driven Trends!
             </p>
             <div className="money-pa">
               <button className="money-btn">Your Ultimate Money Making</button>
@@ -42,7 +41,6 @@ const Menu = () => {
           viewport={{ once: false, amount: 0.7 }}
           className="signup"
         >
-          <button className="sign-btn">Signup for free</button>
         </motion.div>
 
         {/* Divider Line */}

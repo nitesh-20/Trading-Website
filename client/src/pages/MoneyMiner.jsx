@@ -27,7 +27,7 @@ function MoneyMiner() {
 
     try {
       const response = await axios({
-        url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyB5XF-6Evb4_2oB5e2Feajp7JJu1T14WNI`,
+        url: `your_gemini_url`,
         method: "post",
         data: {
           contents: [{ parts: [{ text: currentQuestion }] }],
@@ -48,10 +48,10 @@ function MoneyMiner() {
     setGeneratingAnswer(false);
   }
 
-  useEffect(() => {
+  useEffect(() => {                                         //currently not working, integration issues
     const script = document.createElement("script");
     script.src =
-      "https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js";
+      "dialogflow_src";
     script.async = true;
     document.body.appendChild(script);
   }, []);
@@ -95,11 +95,14 @@ function MoneyMiner() {
 
       {/* Dialogflow Messenger */}
       <df-messenger
-        intent="WELCOME"
-        chat-title="MINERMONEY"
-        agent-id="49107a35-b822-495f-afd5-af432732704f"
-        language-code="en"
-      ></df-messenger>
+  project-id="your_project_id"
+  agent-id="your_agent_id"
+  language-code="en"
+  max-query-length="-1">
+  <df-messenger-chat-bubble
+   chat-title="MINERMONEY">
+  </df-messenger-chat-bubble>
+</df-messenger>
     </div>
   );
 }
