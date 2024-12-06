@@ -1,63 +1,96 @@
-import React from 'react';
-import './MoneyMiner.css';
+import React, { useState, useRef, useEffect } from "react";
+import axios from "axios";
+import "./MoneyMiner.css";
 
-const MoneyMiner = () => {
+function MoneyMiner() {
+  const [chatHistory, setChatHistory] = useState([]);
+  const [question, setQuestion] = useState("");
+  const [generatingAnswer, setGeneratingAnswer] = useState(false);
+
+  const chatContainerRef = useRef(null);
+
+  // Scroll to the bottom of the chat history whenever it updates
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
+  }, [chatHistory]);
+
+  async function generateAnswer(e) {
+    e.preventDefault();
+    if (!question.trim()) return;
+
+    setGeneratingAnswer(true);
+    const currentQuestion = question;
+    setQuestion(""); // Clear the input immediately
+
+    // Add user's question to chat history
+    setChatHistory((prev) => [...prev, { type: "question", content: currentQuestion }]);
+
+    try {
+      const response = await axios({
+        url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyB5XF-6Evb4_2oB5e2Feajp7JJu1T14WNI`,
+        method: "post",
+        data: {
+          contents: [{ parts: [{ text: currentQuestion }] }],
+        },
+      });
+
+      // Extract AI's response from the API response
+      const aiResponse =
+        response.data?.candidates?.[0]?.content?.parts?.[0]?.text || "No response received.";
+
+      // Add AI's response to chat history
+      setChatHistory((prev) => [...prev, { type: "answer", content: aiResponse }]);
+    } catch (error) {
+      console.error("Error generating answer:", error);
+      setChatHistory((prev) => [
+        ...prev,
+        { type: "answer", content: "Error: Unable to fetch response. Please try again." },
+      ]);
+    }
+
+    setGeneratingAnswer(false);
+  }
+
   return (
-    <div className="moneyminer-page">
-      <div>
-      <iframe class="bot"
-        allow="microphone;"
-        font-family="monospace"
-        width="350"
-        height="430"
-        src="https://console.dialogflow.com/api-client/demo/embedded/f6e2bcc2-aa78-40e8-8b5f-019a3dae2d0f">
-    </iframe>
-      </div>
-      {/* <header className="moneyminer-header">
-        <h1>Welcome to MoneyMiner</h1>
-        <p>Unlock the power of mining profitable opportunities.</p>
+    <div className="chat-container">
+      <header className="chat-header">
+        <h1>MoneyMiner</h1>
       </header>
-      
-      <section className="moneyminer-content">
-        <div className="feature-card">
-          <h2>Smart Investments</h2>
-          <p>Analyze trends and make data-driven investment decisions.</p>
-        </div>
-        <div className="feature-card">
-          <h2>Automated Tools</h2>
-          <p>Leverage automation for seamless portfolio management.</p>
-        </div>
-        <div className="feature-card">
-          <h2>Comprehensive Reports</h2>
-          <p>Get detailed insights to track your growth and performance.</p>
-        </div>
-      </section>
 
-      <section className="moneyminer-stats">
-        <h2>Why Choose MoneyMiner?</h2>
-        <div className="stats-grid">
-          <div className="stats-item">
-            <h3>1M+</h3>
-            <p>Users Worldwide</p>
-          </div>
-          <div className="stats-item">
-            <h3>99.9%</h3>
-            <p>Uptime Guarantee</p>
-          </div>
-          <div className="stats-item">
-            <h3>24/7</h3>
-            <p>Support Availability</p>
-          </div>
-        </div>
-      </section>
+      {/* Chat History */}
+      <div className="chat-history" ref={chatContainerRef}>
+        {chatHistory.length === 0 ? (
+          <p className="welcome-message">Welcome to MoneyMiner! Ask me anything.</p>
+        ) : (
+          chatHistory.map((chat, index) => (
+            <div
+              key={index}
+              className={`chat-bubble ${chat.type === "question" ? "question" : "answer"}`}
+            >
+              {chat.content}
+            </div>
+          ))
+        )}
+        {generatingAnswer && <div className="chat-bubble answer">Typing...</div>}
+      </div>
 
-      <section className="moneyminer-call-to-action">
-        <h2>Start Your Mining Journey Today</h2>
-        <p>Join MoneyMiner and gain access to tools and insights that help you maximize your returns.</p>
-        <button className="cta-button">Get Started</button>
-      </section> */}
+      {/* Input Form */}
+      <form className="chat-input-form" onSubmit={generateAnswer}>
+        <textarea
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+          placeholder="Type your question here..."
+          rows="2"
+          disabled={generatingAnswer}
+        ></textarea>
+        <button type="submit" disabled={generatingAnswer}>
+          Send
+        </button>
+      </form>
     </div>
   );
-};
+}
 
 export default MoneyMiner;

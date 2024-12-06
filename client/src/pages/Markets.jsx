@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Markets.css';
 
 const Markets = () => {
-  const [symbol, setSymbol] = useState('IRFC'); // Default symbol
+  const [symbol, setSymbol] = useState('Sun Pharma'); // Default symbol
 
   useEffect(() => {
     // Dynamically load TradingView's script
